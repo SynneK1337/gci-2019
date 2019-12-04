@@ -1,18 +1,18 @@
 # Getting started with STL in C++
-### This article was made for Google Code-In 2019 challange 
+### This article has been made for Google Code-In 2019 challange 
 ## What is STL?
 **STL** stands for **Standard Template Library** and it is a part of **C++ Standard Library**.
 
 ## What does STL provide?
 - Containers *(such as ```std::vector``` or ```std::array```)*
 - Iterators *(defined in ```<iterator>```)*
-- Algortims *(e.g ```std::sort()```)*
+- Algorithms *(e.g ```std::sort()```)*
 - Functions *(for example ```std::transform()```)*
 
 ## Containers
-There are few containers available within **STL**:
+There are a few containers available within **STL**:
 ### **std::vector**
-In other words, ```std::vector``` is just dynamic array. It' s size may get changed during the runtime.
+In other words, ```std::vector``` is just a dynamic array. It' s size may change during the runtime.
 #### ```std::vector``` usage:
 ```c++
 #include <vector>
@@ -25,7 +25,7 @@ int main() {
     numbers.push_back(2);
     numbers.push_back(3);
 
-    // Add item at the begin of numbers
+    // Add item at the beginnning of numbers
     numbers.insert(numbers.begin(), 1);
 
     // Print elements of numbers
@@ -35,21 +35,21 @@ int main() {
     return 0;
 }
 ```
-And after compilation and execution we got following output:
+And after compilation and execution we get the following output:
 ```
 1
 2
 3
 ```
-For more informations about ```std::vector``` I suggest checking out [cppreference](https://en.cppreference.com/w/cpp/container/vector)
+For more information about ```std::vector``` I suggest checking out [cppreference](https://en.cppreference.com/w/cpp/container/vector)
 ### **std::array**
 ```std::array``` is just a bit improved implementation of **C-Style arrays** known from **C**.
 #### Benefits of ```std::array``` over ```C-style array```:
 - Iterators such as:
-    - ```.begin()``` which points to the begin of an array
+    - ```.begin()``` which points to the beginning of an array
     - ```.end()``` which points to the end of an array
     - ```.rbegin()``` which points to the end of an array
-    - ```.rend()``` which points to the begin of an array
+    - ```.rend()``` which points to the beginning of an array
 
 - Compatibility with algoritms such as:
     - ```std::sort()``` which sorts array ascending
@@ -78,7 +78,7 @@ int main() {
     return 0;
 }
 ```
-After compilation and execution we got following results:
+After compilation and execution we get the following results:
 ```
 Unsorted array numbers: 4, 5, 2, 9, 10, -5, -10, 8, 21, 
 Sorted array numbers: -10, -5, 2, 4, 5, 8, 9, 10, 21,
@@ -87,7 +87,7 @@ Arrays are not equal.
 For more information about ```std::array``` I suggest checking out [cppreference](https://en.cppreference.com/w/cpp/container/array).
 
 ### **std::set**
-```std::set``` is the type of container that stores **unique** values which can' t be modified, though you can remove and then add modified value.
+```std::set``` is a type of container that stores **unique** values which can' t be modified, though you can remove them and then add modified value.
 
 #### ```std::set``` usage:
 ```c++
@@ -120,7 +120,7 @@ int main() {
     return 0;
 }
 ```
-After compilation and execution of this code we got following output:
+After compilation and execution of this code we get the following output:
 ```
 Unmodified set: 
 10
@@ -132,11 +132,11 @@ set after deleting values up to 20
 30
 420
 ```
-For more informations about ```std::set``` I suggest checking out [cppreference](https://en.cppreference.com/w/cpp/container/set)
+For more information about ```std::set``` I suggest checking out [cppreference](https://en.cppreference.com/w/cpp/container/set)
 
 ### **std::map**
 If you are familiar with ```python``` language, you could probably heard of ```dictionary``` variable type. ```std::map``` is very similiar to python' s dictionaries.
-Long story short: ```std::map``` is vector of ```std::pair``` that stores **key** and it's **value**.
+```std::map``` is a vector of ```std::pair``` that stores **key** and it's **value**.
 
 #### ```std::map``` usage:
 ```c++
@@ -178,7 +178,7 @@ int main() {
     return 0;
 }
 ```
-After compilation and execution of this code we got following output:
+After compilation and execution of this code we get the following output:
 ```
 Emilian: 15
 Paul: 14
@@ -198,10 +198,10 @@ Emilian -> 15
 John -> 21
 Paul -> 14
 ```
-For more informations about ```std::map``` I suggest checking out [cppreference](https://en.cppreference.com/w/cpp/container/map).
+For more information about ```std::map``` I suggest checking out [cppreference](https://en.cppreference.com/w/cpp/container/map).
 
 ## Algorithms
-STL' s algorithms are pretty useful while working with containers. I will show you usage for some of them below.
+STL's algorithms are pretty useful while working with containers. I will show you the usage for some of them below.
 
 ### **std::sort()** usage:
 ```c++
@@ -240,14 +240,14 @@ int main() {
     }
 }
 ```
-After compiling and execution this code we got following results:
+After compiling and execution this code we get the following results:
 ```
 Unsorted array values: 4, 2, 1, 9, -10, -20, 8, 19, 60, 
 Unsorted vector values: 8, 2, 10, -50,
 Sorted array values: -20, -10, 1, 2, 4, 8, 9, 19, 60,
 Sorted vector values: -50, 2, 8, 10,
 ```
-For more informations about ```std::sort()``` I suggest checking out [cppreference](https://en.cppreference.com/w/cpp/algorithm/sort)
+For more information about ```std::sort()``` I suggest checking out [cppreference](https://en.cppreference.com/w/cpp/algorithm/sort)
 
 ### **std::swap()** usage:
 ```c++
@@ -269,7 +269,7 @@ int main() {
     std::cout << "a = " << a << ", b = " << b << std::endl;
 }
 ```
-After compilation and executing this code we got following results:
+After compilation and executing this code we get the following results:
 ```
 a = 14, b = 21
 a = 21, b = 14
@@ -319,7 +319,7 @@ int main() {
     return 0;
 }
 ```
-After compilation and execution of this code, we got following output:
+After compilation and execution of this code we get the following results:
 ```
 Emilian
 Emilian Zawrotny
