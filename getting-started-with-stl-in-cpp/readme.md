@@ -275,4 +275,57 @@ a = 14, b = 21
 a = 21, b = 14
 ```
 For more informations about ```std::swap()``` I suggest checking out [cppreference](https://en.cppreference.com/w/cpp/algorithm/swap)
-### Made with **<3** by Emilian `synnek1337` Zawrotny
+## **std::string**
+Similary to ```std::array```, ```std::string``` is an improved implementation of ```C-style string```. \
+Advantages of ```std::string``` over ```C-style string```:
+- Non-constant length
+- Overloaded operators such as ```=``` or ```==``` so you don' t need to use ```strcpy()``` or ```strcmp()``` anymore.
+
+### ```std::string``` usage:
+```c++
+#include <string>
+#include <iostream>
+
+int main() {
+    // std::string creation
+    std::string name = "Emilian";
+
+    // Printing std::string
+    std::cout << name << std::endl;
+
+    // Adding last name into name
+    name += " Zawrotny";
+
+    // Printing std::string after modification
+    std::cout << name << std::endl;
+
+    // Getting length of std::string
+    std::cout << "Length of name: " << name.length() << std::endl;
+
+    // Comparing two strings
+    std::string newString = "Emilian Zawrotny";
+    if (newString == name) {
+        std::cout << "Strings are equal." << std::endl;
+    } else {
+        std::cout << "Strings are not equal." << std::endl;
+    }
+
+    std::string thirdString = "abcdef";
+    if (thirdString == name) {
+        std::cout << "Strings are equal." << std::endl;
+    } else {
+        std::cout << "Strings are not equal." << std::endl;
+    }
+    return 0;
+}
+```
+After compilation and execution of this code, we got following output:
+```
+Emilian
+Emilian Zawrotny
+Length of name: 16
+Strings are equal.
+Strings are not equal.
+```
+## Made with **<3** by Emilian `synnek1337` Zawrotny
+### 2019 © All rights reserved
