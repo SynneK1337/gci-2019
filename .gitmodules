@@ -1,8 +1,3 @@
 [submodule "package-a-python-application-in-rpm/stacks-for-windows-linux"]
 	path = package-a-python-application-in-rpm/stacks-for-windows-linux
 	url = https://github.com/synnek1337/stacks-for-windows-linux
-[submodule "finde-best-mirror-fedora"]
-	path = finde-best-mirror-fedora
-	url = https://gitlab.com/SynneK13371/finde-best-mirror-fedora.git[submodule "file-forensics-using-bash-tools"]
-	path = file-forensics-using-bash-tools
-	url = https://github.com/iamzubin/gci-ctf
