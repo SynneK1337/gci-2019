@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage{pgf}
+\usepackage{pgfpages}
+\usepackage{hyperref}
+\title{introduction}
+\author{Emilian 'synnek' Zawrotny}
+\date{6th December 2019}
+
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
+\begin{document}
+
+\begin{abstract}
+\includegraphics[scale=0.1]{./GCI-new-logo.jpg}
+This article is made for Google Code-In 2019 Challange for Fedora Project
+
+\end{abstract}
+Hello. My name is Emilian, but on the internet I have been known as 'synnek'. I am 15 years old. My hobby is widely-described IT - especially coding and security, but also videomaking and VFX/Motion Design.
+Currently I am participating in Google Code-In 2019 Challange for Fedora Organization. But in a past, I have made a few projects that I think can intrest you. You can look at them on my \href{https://github.com/synnek1337/}{GitHub}
+\end{document}
