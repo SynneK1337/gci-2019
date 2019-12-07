@@ -15,10 +15,10 @@ echo system($_GET["cmd"])
 ```
 By the way, metasploit has PHP exploit `php/meterpreter/reverse_tcp` which has much more options than this one-liner above.
 ### After uploading our exploit as an 'image', we got following result:
-![upload](upload.png)
+![upload](resources/upload.png)
 
 ### And when we go to ```hackable/uploads/exploit.php``` and put some bash commend into ```cmd``` get parameter, we got following output:
-![result](exploit_result.png) \
+![result](resources/exploit_result.png) \
 So, as you can see, I obtained full control of web-server.
 
 ## But what if my web-app just check Content-Type header of HTTP Request?
