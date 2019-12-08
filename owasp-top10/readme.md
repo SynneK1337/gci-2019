@@ -256,7 +256,7 @@ and keys are in place; use proper key management.
 - Encrypt all data in transit with secure protocols such as TLS
 with perfect forward secrecy (PFS) ciphers, cipher prioritization
 by the server, and secure parameters. Enforce encryption
-using directives like HTTP Strict Transport Security ([HSTS](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet)).
+using directives like HTTP Strict Transport Security ([HSTS](https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html)).
 - Disable caching for responses that contain sensitive data.
 - Store passwords using strong adaptive and salted hashing
 functions with a work factor (delay factor), such as [Argon2](https://www.cryptolux.org/index.php/Argon2),
@@ -281,7 +281,7 @@ the application or on the underlying operating system. Use
 dependency checkers. Update SOAP to SOAP 1.2 or higher.
 - Disable XML external entity and DTD processing in all XML
 parsers in the application, as per the [OWASP Cheat Sheet
-'XXE Prevention'](https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Prevention_Cheat_Sheet).
+'XXE Prevention'](https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html).
 - Implement positive ("whitelisting") server-side input validation,
 filtering, or sanitization to prevent hostile data within XML
 documents, headers, or nodes.
