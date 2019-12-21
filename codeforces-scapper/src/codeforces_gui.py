@@ -18,15 +18,18 @@ class Application(tk.Frame):
 
     def print_info(self):
         data = Codeforces().get_user_info(self.nickname.get())
-        tk.Label(self.master, text='Current rating: ').grid(row=1, column=0)
-        tk.Label(self.master, text='Current rank: ').grid(row=2, column=0)
-        tk.Label(self.master, text='Max rating: ').grid(row=3, column=0)
-        tk.Label(self.master, text='Max rank: ').grid(row=4, column=0)
+        if type(data) == str:
+            tk.Label(self.master, text='User not found.').grid(row=1, column=0)
+        else:
+            tk.Label(self.master, text='Current rating: ').grid(row=1, column=0)
+            tk.Label(self.master, text='Current rank: ').grid(row=2, column=0)
+            tk.Label(self.master, text='Max rating: ').grid(row=3, column=0)
+            tk.Label(self.master, text='Max rank: ').grid(row=4, column=0)
 
-        tk.Label(self.master, text=data['rating']).grid(row=1, column=1)
-        tk.Label(self.master, text=data['rank']).grid(row=2, column=1)
-        tk.Label(self.master, text=data['maxRating']).grid(row=3, column=1)
-        tk.Label(self.master, text=data['maxRank']).grid(row=4, column=1)
+            tk.Label(self.master, text=data['rating']).grid(row=1, column=1)
+            tk.Label(self.master, text=data['rank']).grid(row=2, column=1)
+            tk.Label(self.master, text=data['maxRating']).grid(row=3, column=1)
+            tk.Label(self.master, text=data['maxRank']).grid(row=4, column=1)
 
 
 if __name__ == "__main__":

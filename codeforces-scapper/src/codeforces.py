@@ -9,10 +9,10 @@ class Codeforces():
 
     def get_user_info(self, handle):
         request = self._session.get(self._url.format('user.info'), params={'handles': handle})
-        #if request.status_code == 200:
-        return request.json()['result'][0]
-        #else:
-         #   return f"[-] User {handle} not found."
+        if request.status_code == 200:
+            return request.json()['result'][0]
+        else:
+            return f"[-] User {handle} not found."
 
 
 if __name__ == "__main__":
