@@ -1,0 +1,33 @@
+body {
+    background-color: #2d3436;
+    font-family: 'Open Sans', sans-serif;
+}
+
+form {
+    margin-top: 25vh;
+    font-size: 20px;
+    display: flexbox;
+    text-align: center;
+    padding: 10px;
+    color: white;
+}
+
+input {
+    border-radius: 4px;
+    border: 2px white;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.weather{
+    margin-top: 50px;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+}
+
+.weather img{
+    visibility: hidden;
+    height: 128px;
+    width: 128px;
+}

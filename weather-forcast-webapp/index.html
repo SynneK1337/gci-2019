@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <title>Weather Forcast WebApp</title>
+</head>
+<body>
+    <form>
+        <h1>Enter your city: </h1><input type='text' name='city' id='city'>
+        <input type='button' onclick='get_weather()' value="check weather">
+    </form>
+    <script>
+        function get_weather() {
+            const URL = "https://api.openweathermap.org/data/2.5/weather?APPID=9fa16bd5078ca8dffdf54339845e08e6&units=metric&q=";
+            var city = document.getElementById('city').value;
+            var request = new XMLHttpRequest();
+            request.open("GET", URL+city);
+            request.send()
+            
+            request.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var response = JSON.parse(this.responseText);
+                    document.getElementById('temp').innerText = "Temperature: " + Math.floor(response['main']['temp']) + "°C"
+                    document.getElementById('desc').innerText = response['weather'][0]['description']
+                    document.getElementById('wind_spd').innerText = "Wind speed: " + response['wind']['speed'] + " m/s"
+                    document.getElementById('wind_dir').innerText = "Wind direction: " + response['wind']['deg'] + "°"
+                    document.getElementById('rain_vol').innerText = "Rain volume in last 3 hours: " + response['rain']['3h'] + ' mm'
+                    const sunrise = new Date(response['sys']['sunrise']*1000)
+                    document.getElementById('sunrise').innerText = "Sunrise at: " + sunrise.getHours()+':'+sunrise.getMinutes()
+                    const sunset = new Date(response['sys']['sunset']*1000)
+                    document.getElementById('sunset').innerText = "Sunset at: " + sunset.getHours()+':'+sunset.getMinutes()
+                    document.getElementById('icon').src = "https://openweathermap.org/img/w/"+response['weather'][0]['icon']+'.png'
+                    document.getElementById('icon').style = 'visibility: visible';
+                }
+            }
+        }
+    </script>
+    <div class=weather>
+        <h1>Current Weather: </h1>
+        <img id='icon'>
+        <h2 id='desc'></h2>
+        <h2 id='temp'></h2>
+        <h2 id='wind_spd'></h2>
+        <h2 id='wind_dir'></h2>
+        <h2 id='rain_vol'></h2>
+        <h2 id="sunrise"></h2>
+        <h2 id="sunset"></h2>
+    </div>
+</body>
+</html>
