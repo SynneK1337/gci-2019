@@ -24,7 +24,9 @@
             request.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     var response = JSON.parse(this.responseText);
-                    document.getElementById('temp').innerText = "Temperature: " + Math.floor(response['main']['temp']) + "°C"
+                    document.getElementById('temp').innerText = "Current temperature: " + Math.floor(response['main']['temp']) + "°C"
+                    document.getElementById('temp-max').innerText = "Maximum temperature: " + Math.floor(response['main']['temp_max']) + "°C"
+                    document.getElementById('temp-min').innerText = "Minimum temperature: " + Math.floor(response['main']['temp_min']) + "°C"
                     document.getElementById('desc').innerText = response['weather'][0]['description']
                     document.getElementById('wind_spd').innerText = "Wind speed: " + response['wind']['speed'] + " m/s"
                     document.getElementById('wind_dir').innerText = "Wind direction: " + response['wind']['deg'] + "°"
@@ -34,7 +36,25 @@
                     const sunset = new Date(response['sys']['sunset']*1000)
                     document.getElementById('sunset').innerText = "Sunset at: " + sunset.getHours()+':'+sunset.getMinutes()
                     document.getElementById('icon').src = "https://openweathermap.org/img/w/"+response['weather'][0]['icon']+'.png'
-                    document.getElementById('icon').style = 'visibility: visible';
+                    document.getElementById('icon').style = 'visibility: visible'
+                    document.getElementById('cloudiness').innerText = "Cloudiness: " + response['clouds']['all'] + '%'
+                    document.getElementById('humidity').innerText = "Humidity: " + response['main']['humidity'] + '%'
+                    document.getElementById('pressure').innerText = "Pressure: " + response['main']['pressure'] + ' hPa'
+                } else if (this.status == 404) {
+                    document.getElementById('desc').innerText = "City not found."
+                    document.getElementById('temp').innerText = ""
+                    document.getElementById('temp-max').innerText = ""
+                    document.getElementById('temp-min').innerText = ""
+                    document.getElementById('wind_spd').innerText = "" 
+                    document.getElementById('wind_dir').innerText = ""
+                    document.getElementById('rain_vol').innerText = ""
+                    document.getElementById('sunrise').innerText = ""
+                    document.getElementById('sunset').innerText = ""
+                    document.getElementById('sunset').innerText = ""
+                    document.getElementById('icon').style = 'visibility: hidden'
+                    document.getElementById('cloudiness').innerText = "" 
+                    document.getElementById('humidity').innerText = "" 
+                    document.getElementById('pressure').innerText = ""
                 }
             }
         }
@@ -44,11 +64,16 @@
         <img id='icon'>
         <h2 id='desc'></h2>
         <h2 id='temp'></h2>
+        <h2 id='temp-max'></h2>
+        <h2 id='temp-min'></h2>
         <h2 id='wind_spd'></h2>
         <h2 id='wind_dir'></h2>
         <h2 id='rain_vol'></h2>
         <h2 id="sunrise"></h2>
         <h2 id="sunset"></h2>
+        <h2 id='cloudiness'></h2>
+        <h2 id='humidity'></h2>
+        <h2 id='pressure'></h2>
     </div>
 </body>
 </html>
