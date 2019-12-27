@@ -4,3 +4,6 @@
 [submodule "craft-your-custom-port-scanner-in-python"]
 	path = craft-your-custom-port-scanner-in-python
 	url = https://github.com/synnek1337/pyscan
+[submodule ".\\introduction-to-systemd-create-a-simple-systemd-service\\pynotes-server"]
+	path = .\\introduction-to-systemd-create-a-simple-systemd-service\\pynotes-server
+	url = https://github.com/SynneK1337/pynotes-server

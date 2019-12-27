@@ -1,0 +1,14 @@
+[Unit]
+Description=Simple notes hosting solution
+After=mysqld.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+User=synnek     ; Username you wanty to execute script with. Don' t use root if not needed.
+ExecStart=/bin/python3 /usr/bin/pynotes-server/main.py  ; Command used to execution of the script
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=multi-user.target
