@@ -1,14 +1,14 @@
 # Introduction to systemd
-### Creating a service, force it to start automatically and reload if crashed.
+### Creating a service, force it to start automatically and reload it if crashed.
 
-Sometimes it is useful to have app running all the time, auto-restarting if it crashes. The simplest way to achieve that is make systemd service with this app.
+Sometimes it is useful to have an app running all the time, auto-restarting if it crashes. The simplest way to achieve that is make systemd service with this app.
 
 You probably used ```systemctl start ...``` or ```service ... start``` on your Linux Machine to run for example [apache](https://httpd.apache.org/) or [mysql](https://www.mysql.com/).
-You can do the same with your own app, but as first, you have to write a unit file with service.
+You can do the same with your app, but first, you have to write a unit file with service.
 In this article, I will write service for [pynotes-server](https://github.com/synnek1337/pynotes-server) - a simple notes hosting server made by myself.
 
 ## How do I execute pynotes-server?
-pynotes-server can be runned with ```python3 /usr/bin/pynotes-server/main.py```.
+pynotes-server can be run with ```python3 /usr/bin/pynotes-server/main.py```.
 
 ## How can I create systemd service file?
 Systemd stores service unit files in ```/etc/systemd/system/``` directory.
@@ -16,7 +16,7 @@ Systemd stores service unit files in ```/etc/systemd/system/``` directory.
 ```
 [Unit]
 Description=Simple notes hosting solution
-After=network.service   ; Because our script need internet connection to work properly
+After=network.service   ; Because our script needs internet connection to work properly
 
 [Service]
 Type=simple
@@ -38,14 +38,14 @@ systemctl enable pynotes
 ```
 
 ## Improving this service
-### You might noticed, that pynotes depends on [mysql](https://www.mysql.com/). In this case, we want our service to start after `mysqld.service`
+### You might noticed, that pynotes depend on [mysql](https://www.mysql.com/). In this case, we want our service to start after `mysqld.service`
 Let' s change this in our file:
 ```
 ...
 After=mysqld.service
 ...
 ```
-Yay, now there won' t be a situation where our scripts is being executed while mysql is not running.
+Yay, now there won' t be a situation where our scripts are being executed while mysql is not running.
 
 ### But what if our service fails? Will systemd run it again?
 By default - **not**. But we can change configuration of our service to force systemd to reload it after failure.
