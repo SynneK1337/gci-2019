@@ -22,7 +22,7 @@ def get_aspect_ratio(img):
 
 
 def resize_image(img, aspect_ratio):
-    BASE_SIZE = 400 
+    BASE_SIZE = 400
     if aspect_ratio > 1:
         return img.resize((BASE_SIZE, int(BASE_SIZE / aspect_ratio)), Image.ANTIALIAS)
     elif aspect_ratio < 1:
