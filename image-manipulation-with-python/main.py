@@ -39,7 +39,7 @@ def _save_image(img, output_file):
     while out_size > MAXIMUM_SIZE:
         try:
             remove(output_file)
-            img.save(output_file, quality=quality)
+            img.save(output_file, quality=quality, format='JPEG')
         except FileNotFoundError:
             pass
         out_size = path.getsize(output_file)
@@ -58,10 +58,13 @@ if __name__ == "__main__":
 
     if mode == 1:
         img = _get_input_file()
-        format = img.format
         aspect_ratio = get_aspect_ratio(img)
         img = resize_image(img, aspect_ratio)
         output_file = input('[?] Where do you want to save resized image? ')
+        if img.format != 'JPEG':
+            img = img.convert('RGB')
+            filename, ext = path.splitext(output_file)
+            output_file = filename + '.jpg'
         _save_image(img, output_file)
 
     elif mode == 2:
@@ -75,8 +78,12 @@ if __name__ == "__main__":
         chdir(dirname)
         for f in listdir():
             img = Image.open(f)
-            if img.format == 'JPEG':
-                print(f'[i] {f} opened.')
-                aspect_ratio = get_aspect_ratio(img)
-                img = resize_image(img, aspect_ratio)
-                _save_image(img, path.join(output_dir, f))
+            print(f'[i] {f} opened.')
+            aspect_ratio = get_aspect_ratio(img)
+            img = resize_image(img, aspect_ratio)
+            output_file = f
+            if img.format != 'JPEG':
+                img = img.convert('RGB')
+                filename, ext = path.splitext(f)
+                output_file = filename + '.jpg'
+            _save_image(img, path.join(output_dir, output_file))
