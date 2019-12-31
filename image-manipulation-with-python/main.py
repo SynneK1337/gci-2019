@@ -26,7 +26,7 @@ def resize_image(img, aspect_ratio):
     if aspect_ratio > 1:
         return img.resize((BASE_SIZE, int(BASE_SIZE / aspect_ratio)), Image.ANTIALIAS)
     elif aspect_ratio < 1:
-        return img.resize((int(BASE_SIZE / aspect_ratio), BASE_SIZE), Image.ANTIALIAS)
+        return img.resize((int(BASE_SIZE * aspect_ratio), BASE_SIZE), Image.ANTIALIAS)
     else:
         return img.resize((BASE_SIZE, BASE_SIZE), Image.ANTIALIAS)
 
