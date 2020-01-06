@@ -36,6 +36,6 @@ RUN cat /tmp/trap.txt >> /etc/profile
 RUN rm /tmp/trap.txt
 
 # Configure OS a bit, to make it look as a real server rather than honeypot
-RUN apt install nano vim wget curl linux-image-amd64 xorg-server firefox chromium leafpad
+RUN apt install -y nano vim wget curl linux-image-amd64
 
 CMD ["/usr/sbin/sshd", "-D", "-E", "/var/log/auth.log"]

@@ -6,7 +6,7 @@
 ## Deploy
 ```
 docker build . -t honeypot
-docker run -d --name honeypot -p 22:22 honeypot
+docker run -d --name honeypot -h workstation -p 22:22 honeypot
 ```
 
 ## How can I browse log files?
