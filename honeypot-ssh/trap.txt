@@ -1,0 +1,1 @@
+trap 'echo "$USER@$SSH_CLIENT > $PWD > $BASH_COMMAND" >> /var/log/.commands.log' DEBUG
