@@ -6,4 +6,6 @@ By default, script tries to put 20 queens on 20x20 board, but you can change tha
 - Windows x64
 - Linux x64
 
+### Demo
+![](screenshot.png)
 ### Made by Emilian **SynneK1337** Zawrotny
