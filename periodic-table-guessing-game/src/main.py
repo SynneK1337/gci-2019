@@ -34,6 +34,7 @@ class Window(tk.Frame, Table):
         self.reset_btn.pack()
         self.get_anwear_btn = tk.Button(self.master, text="Get anwear", command=self.get_anwear).pack()
         self.status = tk.Label(self.master)
+        self.status['text'] = ''
         self.status.pack()
 
     def validate_anwear(self):
@@ -50,10 +51,10 @@ class Window(tk.Frame, Table):
             left_or_right = self.get_left_or_right(self.element, self.get_by_name(self.input_.get()))
             if left_or_right:
                 self.status['text'] = f"""
-                                      Your anwear is incorrect.
-                                      Correct element is on the {left_or_right} side of element you providen.
-                                      You have {5 - self.attempt} attempts left.
-                                      """
+Your anwear is incorrect.
+Correct element is on the {left_or_right} side of element you providen.
+You have {5 - self.attempt} attempts left.
+                """
             else:
                 self.status['text'] = f"Your anwear is incorrect. You have {5 - self.attempt} attempts left."
 
