@@ -92,12 +92,12 @@ def write_to_ods(students, filename):
 
 if __name__ == "__main__":
     students = {}
-    academics_term1 = ParseODS("data/Data1.ods")
-    academics_term2 = ParseODS("data/Data2.ods")
-    academics_term3 = ParseODS("data/Data3.ods")
-    academics_term4 = ParseODS("data/Data4.ods")
-    ielts = ParseODS("data/IELTS.ods")
-    interview = ParseODS("data/interview.ods")
+    academics_term1 = ParseODS(input("[?] Path to 1st term of academics: "))
+    academics_term2 = ParseODS(input("[?] Path to 2nd term of academics: "))
+    academics_term3 = ParseODS(input("[?] Path to 3rd term of academics: "))
+    academics_term4 = ParseODS(input("[?] Path to 4th term of academics: "))
+    ielts = ParseODS(input("[?] Path to IELTS Results: "))
+    interview = ParseODS(input("[?] Path to interview results: "))
     for student_name in academics_term1.get_students_names():
         students[student_name] = {}
 
