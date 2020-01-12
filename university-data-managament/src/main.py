@@ -115,4 +115,4 @@ if __name__ == "__main__":
         student["Total Avarage"] = 0.4*(student["academics"]/100)+0.3*(student["ielts"]/9)+0.3*(student["interview"]/10)
     
     students = sort_students(students)
-    write_to_ods("output.ods", students)
+    write_to_ods(students, "output.ods")
