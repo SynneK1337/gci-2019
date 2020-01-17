@@ -1,0 +1,41 @@
+[?] How many tests you want to perform? 20    
+[1] How many days should the battle last? 1   
+[2] How many days should the battle last? 2   
+[3] How many days should the battle last? 3   
+[4] How many days should the battle last? 4   
+[5] How many days should the battle last? 5   
+[6] How many days should the battle last? 6   
+[7] How many days should the battle last? 7   
+[8] How many days should the battle last? 8   
+[9] How many days should the battle last? 9   
+[10] How many days should the battle last? 10 
+[11] How many days should the battle last? 11 
+[12] How many days should the battle last? 12 
+[13] How many days should the battle last? 13 
+[14] How many days should the battle last? 14 
+[15] How many days should the battle last? 15 
+[16] How many days should the battle last? 16 
+[17] How many days should the battle last? 17 
+[18] How many days should the battle last? 18 
+[19] How many days should the battle last? 19 
+[20] How many days should the battle last? 20 
+Iron man                                      
+Iron man                                      
+Captain America                               
+Captain America                               
+Iron man                                      
+Iron man                                      
+Iron man                                      
+Captain America                               
+Captain America                               
+Captain America                               
+Captain America                               
+Iron man                                      
+Iron man                                      
+Iron man                                      
+Iron man                                      
+Iron man                                      
+Captain America                               
+Captain America                               
+Captain America                               
+Captain America                               
