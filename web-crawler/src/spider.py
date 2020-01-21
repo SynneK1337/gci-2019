@@ -56,6 +56,11 @@ class Spider():
                         self.change_directory(file_)
                         for file__ in self.list_files():
                             files.append(os.path.join(file_, file__))
+                            if file__.endswith('/'):
+                                self.change_directory(file__)
+                                for file___ in self.list_files():
+                                    files.append(os.path.join(file__, file___))
+                                self.go_to_parent_directory()
                         self.go_to_parent_directory()
                 self.go_to_parent_directory()
         return files
