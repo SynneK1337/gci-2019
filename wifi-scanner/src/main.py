@@ -35,7 +35,7 @@ def syn_scan(addr, port):
 
 if __name__ == "__main__":
     network = get_network()
-    arp_result = arp_scan(network.network_address.exploded+"/24")
+    result = arp_scan(network.network_address.exploded+"/24")
     print(f"IP\t\tMAC\t\t\tVendor")
     for host in result:
         print(f"{host['ip']}\t{host['mac']}\t{host['vendor']}")
